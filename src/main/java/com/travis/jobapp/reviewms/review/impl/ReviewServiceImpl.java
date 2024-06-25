@@ -28,9 +28,10 @@ public class ReviewServiceImpl implements ReviewService {
         if (review.getId() != null) {
             throw new IllegalArgumentException("A new review cannot already have an ID");
         }
-        if (review.getCompanyId() == null) {
+        if (companyId == null) {
             throw new IllegalArgumentException("A review must have a company");
         }
+        review.setCompanyId(companyId);
         return reviewRepository.save(review).getId();
     }
 
