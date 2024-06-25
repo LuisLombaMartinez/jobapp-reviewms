@@ -1,0 +1,14 @@
+version: '3'
+services:
+  reviews_db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: reviews_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      PGDATA: /var/lib/postgresql/data
+    ports:
+      - "5434:5432"
+    volumes:
+      - ./postgres_reviews:/var/lib/postgresql/data
+    restart: unless-stopped
