@@ -27,6 +27,7 @@ jobs:
         ports:
           - 5432:5432 # This line is option
 
+    # TODO: Move this into a shared workflow
     steps:
       - name: checkout code
         uses: actions/checkout@v4
